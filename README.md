@@ -1,5 +1,14 @@
 # raspberry pico
 
+CTRL-A - enter REPL mode
+CTRL-B - enter normal REPL mode
+CTRL-C - interrupt a running program
+CTRL-D - soft reset
+CTRL-E - paste mode
+
+####################################33
+
+
 
 micropython.kbd_intr(chr)
 
