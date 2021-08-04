@@ -8,6 +8,12 @@ CTRL-E - paste mode
 
 ####################################33
 
+rshell 'cp main.py /pyboard ; repl ~ import main ~'
+rshell 'cp main.py /pyboard ; repl ~ machine.reset() ~'
+rshell 'repl ~ machine.reset() ~'
+
+echo a > /dev/ttyACM0
+
 
 
 micropython.kbd_intr(chr)
@@ -28,6 +34,25 @@ while True:
   while sys.stdin in select.select([sys.stdin], [], [], 0)[0]:
     ch = sys.stdin.read(1)
     print("Got " + hex(ord(ch)))
+
+
+<(obj,ev)>  poll:
+
+import sys,uselect
+sp=uselect.poll()
+sp.register(sys.stdin,uselect.POLLIN)
+def read1():
+    return(sys.stdin.read(1) if sp.poll(0) else None)
+
+
+POLLERR : 8
+POLLHUP  : 16
+POLLIN : 1
+POLLOUT : 4
+
+
+<poll> poll.ipoll(timeout=-1, flags=0, /)
+
 
 ################### clock #################
 
