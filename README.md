@@ -90,6 +90,27 @@ def hello(a):
 
 pin19.irq(handler=hello,trigger=Pin.IRQ_FALLING)
 
+
+###########################################
+
+Hardware Timers
+
+
+Timer.init(*, mode=Timer.PERIODIC, period=- 1, callback=None)
+
+Timer.deinit()
+
+
+Timer.ONE_SHOT
+Timer.PERIODIC
+
+
+t = Timer()
+t.init(<...>, callback = fn(<Timerobj))
+
+
+
+
 ##############################################3
 
 
