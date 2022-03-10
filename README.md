@@ -167,6 +167,20 @@ t.init(<...>, callback = fn(<Timerobj))
     "set": None,
 
 
+## irq().flags()
+
+
+ IRQs 0-3 are visible from to the processor, 4-7 are internal to the state machines.
+
+ ### flags staates
+irq/int/hex/bin
+ 0 - 256  - 0x100h  - 0001 0000 0000
+ 1 - 512  - 0x200h  - 0010 0000 0000
+ 2 - 1024 - 0x400h  - 0100 0000 0000
+ 3 - 2048 - 0x800h  - 1000 0000 0000
+
+
+
 ## USB reset
 
 # all:

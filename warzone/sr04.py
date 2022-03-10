@@ -65,5 +65,5 @@ tm0 = machine.Timer()
 
 
 while 1:
-    time.sleep(0.01)
+    time.sleep(0.1)
     print("x", z["time"])
