@@ -180,6 +180,13 @@ irq/int/hex/bin
  3 - 2048 - 0x800h  - 1000 0000 0000
 
 
+The emergency exception buffer¶
+If an error occurs in an ISR, MicroPython is unable to produce an error report unless a special buffer is created for the purpose. Debugging is simplified if the following code is included in any program using interrupts.
+
+import micropython
+micropython.alloc_emergency_exception_buf(100)
+The emergency exception buffer can only hold one exception stack trace. This means that if a second exception is thrown during the handling of an exception while the heap is locked, that second exception’s stack trace will replace the original one - even if the second exception is cleanly handled. This can lead to confusing exception messages if the buffer is later printed.
+
 
 ## USB reset
 
